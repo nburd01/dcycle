@@ -1,50 +1,31 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, Component} from 'react';
 import './App.css';
 
-function App() {
 
-  const [data, setData] = useState([]);
+class App extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { apiResponse: "" };
+  }
 
-  useEffect(() => {
-    fetch("http://localhost:3200/api/genderize/:name") 
-    .then(Response=>{
-      if(Response){
-          console.log(Response)
-          setData(Response)
+  callAPI() {
+      fetch("http://localhost:3200/api/genderize/:name")
+          .then(res => res.text())
+          .then(res => this.setState({ apiResponse: res }))
+          .catch(err => err);
+  }
 
-      }else{
-          alert("not found")
-      }
-  })
-  .then((response) => response.json())
-}, [])
+  componentDidMount() {
+      this.callAPI();
+  }
 
-  // const dataRender = data.map((value, index) => 
-  //   <div key={index}>
-  //     <p>{value.name}</p>
-  //     </div>
-  // );
-
-
-  return (
-    <div className="App">
-      {/* {(typeof data === 'undefined'
-        ) ? (
-          <p>Loading...</p>
-        ) : ( */}
-           {/* <ul>
-          {data &&
-            data.map(({ id }) => (
-              <li key={id}>
-                <h3>{id}</h3>
-              </li>
-            ))}
-        </ul> */}
-        {/* )} */}
-        {/* <p>{dataRender}</p> */}
-        {/* <p>{data}</p> */}
-    </div>
-  );
+  render() {
+      return (
+          <div className="App">
+              <p className="App-intro">{this.state.apiResponse}</p>
+          </div>
+      );
+  }
 }
 
 export default App;
