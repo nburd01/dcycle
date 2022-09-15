@@ -29,9 +29,12 @@ export default function App() {
   
     useEffect(() => fetchgenderize, []);
     console.log("fetchgenderize", fetchgenderize, [])
+    console.log("genderize",genderize)
   
     if (loading) return <p>Data are loading...</p>;
     if (error) return <p>Error: {error.status}</p>;
+
+    
   
     return (
       <div className="App">
@@ -40,7 +43,7 @@ export default function App() {
         </h1>
         <h2>Name: {genderize?.name}</h2>
         <ul>
-            {countries.map((country, index) => (
+            {genderize.country.map((country, index) => (
 
                 <li key={index}>
                     <p>{country?.country_id}</p>
