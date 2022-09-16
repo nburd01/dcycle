@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react';
-import Form from './ex14';
+// import Form from './ex14';
 import './App.css';
+import axios from 'axios';
+import { Button, Form } from 'semantic-ui-react'
 
 
 export default function App() {
@@ -9,9 +11,11 @@ export default function App() {
     const [agify, setAgify] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [name, setName] = useState('');
+
     //------------------------------------------------------------
     const fetchgenderize = () => {
-      fetch("http://localhost:3200/api/genderize/:name")
+      fetch(`http://localhost:3200/api/genderize/:${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -32,7 +36,7 @@ export default function App() {
     //------------------------------------------------------------
 
     const fetchnationalize = () => {
-      fetch("http://localhost:3200/api/nationalize/:name")
+      fetch(`http://localhost:3200/api/nationalize/:${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -53,7 +57,7 @@ export default function App() {
     //------------------------------------------------------------
 
     const fetchagify = () => {
-      fetch("http://localhost:3200/api/agify/:name")
+      fetch(`http://localhost:3200/api/agify/:${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -74,27 +78,31 @@ export default function App() {
     //------------------------------------------------------------
   
     useEffect(() => fetchgenderize, []);
-    console.log("fetchgenderize", fetchgenderize, [])
-    console.log("genderize",genderize)
+    // console.log("fetchgenderize", fetchgenderize, [])
+    // console.log("genderize",genderize)
 
     useEffect(() => fetchnationalize, []);
-    console.log("fetchnationalize", fetchnationalize, [])
-    console.log("nationalize",nationalize)
+    // console.log("fetchnationalize", fetchnationalize, [])
+    // console.log("nationalize",nationalize)
 
     useEffect(() => fetchagify, []);
-    console.log("fetchagify", fetchagify, [])
-    console.log("agify",agify)
+    // console.log("fetchagify", fetchagify, [])
+    // console.log("agify",agify)
 
-    
-  
+    const putGenderize = () => {
+      axios.get(`https://api.agify.io/?name=${name}`)
+        console.log(name);
+        setName(name)
+    }
     if (loading) return <p>Data are loading...</p>;
     if (error) return <p>Error: {error.status}</p>;
 
     return (
-      <div className="App">
-        <h1>
-          API Render for the name {nationalize?.name}
+      <div className="main">
+        <h1 className="main-header">
+          API Render for the name
         </h1>
+        <h2>{name}</h2>
         <h2>Genderize</h2>
         <h3>Name: {genderize?.name}</h3>
         <h3>Gender: {genderize?.gender}</h3>
@@ -116,8 +124,17 @@ export default function App() {
                 <h3>Age: {agify?.age}</h3>
                 <h3>Count: {agify?.count}</h3>
 
-
-        <Form/>
+        <div className="create-form">
+          <div>
+              <Form className="create-form">
+                  <Form.Field>
+                      <label>First Name</label>
+                      <input placeholder='Name' onChange={(e) => setName(e.target.value)}/>
+                  </Form.Field>
+                  <Button onClick={putGenderize} type='submit'>Submit</Button>
+              </Form>
+          </div>
+        </div>
       </div>
     );
 }

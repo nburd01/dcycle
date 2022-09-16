@@ -1,15 +1,31 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// // import { Button, Form } from 'semantic-ui-react'
+// // import 'semantic-ui-css/semantic.min.css'
 
-export default function Form() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data, e) => console.log(data, e);
-  const onError = (errors, e) => console.log(errors, e);
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit, onError)}>
-      <input {...register("name")} />
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
+// export default function Create() {
+//     const [name, setName] = useState('');
+//     // const postData = () => {
+//     //     console.log(firstName);
+//     //     console.log(lastName);
+//     //     console.log(checkbox);
+//     // }
+//     const putGenderize = () => {
+//       axios.get(`https://api.agify.io/?name=${name}`)
+//         console.log(name);
+//         setName(name)
+//   }
+    
+//     return (
+//         <div>
+//             <Form className="create-form">
+//                 <Form.Field>
+//                     <label>First Name</label>
+//                     <input placeholder='Name' onChange={(e) => setName(e.target.value)}/>
+//                 </Form.Field>
+//                 <Button onClick={putGenderize} type='submit'>Submit</Button>
+//             </Form>
+//         </div>
+//     )
+// }
