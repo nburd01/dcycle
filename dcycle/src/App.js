@@ -11,11 +11,11 @@ export default function App() {
     const [agify, setAgify] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [name, setName] = useState('');
+    const [name, setName] = useState('niall');
 
     //------------------------------------------------------------
     const fetchgenderize = () => {
-      fetch(`http://localhost:3200/api/genderize/:${name}`)
+      fetch(`http://localhost:3200/api/genderize/${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -36,7 +36,7 @@ export default function App() {
     //------------------------------------------------------------
 
     const fetchnationalize = () => {
-      fetch(`http://localhost:3200/api/nationalize/:${name}`)
+      fetch(`http://localhost:3200/api/nationalize/${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -57,7 +57,7 @@ export default function App() {
     //------------------------------------------------------------
 
     const fetchagify = () => {
-      fetch(`http://localhost:3200/api/agify/:${name}`)
+      fetch(`http://localhost:3200/api/agify/${name}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -75,6 +75,7 @@ export default function App() {
         setLoading(false);
       });
     };
+    console.log("name",name)
     //------------------------------------------------------------
   
     useEffect(() => fetchgenderize, []);
@@ -90,7 +91,7 @@ export default function App() {
     // console.log("agify",agify)
 
     const putGenderize = () => {
-      axios.get(`https://api.agify.io/?name=${name}`)
+      axios.get(`https://api.genderize.io/?name=${name}`)
         console.log(name);
         setName(name)
     }
@@ -102,6 +103,12 @@ export default function App() {
         <h1 className="main-header">
           API Render for the name
         </h1>
+        {(`${name}` === '')
+        ?
+        <p>null</p> 
+        : 
+        (
+        <div>
         <h2>{name}</h2>
         <h2>Genderize</h2>
         <h3>Name: {genderize?.name}</h3>
@@ -111,7 +118,7 @@ export default function App() {
 
         <h2>Nationalize</h2>
 
-        <ul>
+        {/* <ul>
             {nationalize.country.map((country, index) => (
 
                 <li key={index}>
@@ -119,7 +126,7 @@ export default function App() {
                     <p>{country?.probability}</p>
                 </li>
             ))}
-        </ul>
+        </ul> */}
         <h2>Agify</h2>
                 <h3>Age: {agify?.age}</h3>
                 <h3>Count: {agify?.count}</h3>
@@ -135,6 +142,7 @@ export default function App() {
               </Form>
           </div>
         </div>
+        </div>)}
       </div>
     );
 }
