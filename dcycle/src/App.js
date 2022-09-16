@@ -96,9 +96,10 @@ export default function App() {
           API Render for the name {nationalize?.name}
         </h1>
         <h2>Genderize</h2>
-        <h3>Age: {genderize?.age}</h3>
-        <h3>Count: {genderize?.count}</h3>
         <h3>Name: {genderize?.name}</h3>
+        <h3>Gender: {genderize?.gender}</h3>
+        <h3>Probability: {genderize?.probability}</h3>
+        <h3>Count: {genderize?.count}</h3>
 
         <h2>Nationalize</h2>
 
@@ -107,11 +108,13 @@ export default function App() {
 
                 <li key={index}>
                     <p>{country?.country_id}</p>
+                    <p>{country?.probability}</p>
                 </li>
             ))}
         </ul>
         <h2>Agify</h2>
                 <h3>Age: {agify?.age}</h3>
+                <h3>Count: {agify?.count}</h3>
 
 
         <Form/>

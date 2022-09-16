@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
-function Form() {
-  const [firstName, setFirstName] = useState("");
+export default function Form() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data, e) => console.log(data, e);
+  const onError = (errors, e) => console.log(errors, e);
 
   return (
-    <form>
-      <input
-        value={firstName}
-        onChange={e => setFirstName(e.target.value)}
-        placeholder="First name"
-        type="text"
-        name="firstName"
-        required
-      />
+    <form onSubmit={handleSubmit(onSubmit, onError)}>
+      <input {...register("name")} />
       <button type="submit">Submit</button>
     </form>
   );
 }
-export default Form;
