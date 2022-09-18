@@ -134,7 +134,7 @@ export default function App() {
 
         <h2>Nationalize</h2>
 
-        {/* <ul>
+        <ul>
             {nationalize.country.map((country, index) => (
 
                 <li key={index}>
@@ -142,7 +142,7 @@ export default function App() {
                     <p>{country?.probability}</p>
                 </li>
             ))}
-        </ul> */}
+        </ul>
         <h2>Agify</h2>
                 <h3>Age: {agify?.age}</h3>
                 <h3>Count: {agify?.count}</h3>
