@@ -9,8 +9,8 @@ const store = configureStore({
     reducer: {
         gender: genderSlice.reducer,
         genderlist: genderlistSlice.reducer,
-        nationality: nationalizeSlice.reducer,
-        nationality: agifySlice.reducer,
+        nationalize: nationalizeSlice.reducer,
+        agify: agifySlice.reducer,
     }
 });
 

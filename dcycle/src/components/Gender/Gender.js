@@ -6,10 +6,10 @@ import classes from "./Gender.module.css";
 export const Gender = () => {
   const genderData = useSelector((state) => state.gender.data);
 
-
   const renderAllData = () => { 
     return (
       <>
+      <h1>Gender</h1>
       <h2 id="gendercomponentnameh2">{genderData.name}</h2>
         <ul className={classes.list}>
           <li className="list">

@@ -88,7 +88,8 @@ export const Name = () => {
       dispatch(
         ageActions.setAge({
           name: name,
-          country: responseData.country,
+          age: responseData.age,
+          count: responseData.count,
   
         })
       );
