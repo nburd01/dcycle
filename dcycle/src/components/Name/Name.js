@@ -4,6 +4,8 @@ import { Article } from "../UI/Article";
 import classes from "./Name.module.css";
 import { genderActions } from "../../store/gender-slice";
 import {genderlistActions} from "../../store/genderlist-slice"
+import {nationalityActions} from "../../store/nationalize-slice"
+import {ageActions} from "../../store/agify-slice"
 
 export const Name = () => {
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ export const Name = () => {
       setErrorImput(false);
     }
     
-    const getData = async (name) => {
+    const getGenderData = async (name) => {
       const response = await fetch("https://api.genderize.io/?name=" + name);
       if (!response.ok) {
         genderActions.clear();
@@ -50,6 +52,19 @@ export const Name = () => {
             "%)",
         })
       );
+    };
+
+    getGenderData(nameInput);
+    setNameInput("");
+
+    const getNationData = async (name) => {
+      const response = await fetch("https://api.nationalize.io/?name=" + name);
+      if (!response.ok) {
+        nationalityActions.clear();
+        return;
+      }
+      const responseData = await response.json();
+  
       dispatch(
         nationalityActions.setNationality({
           name: name,
@@ -57,18 +72,35 @@ export const Name = () => {
           count: responseData.count,
         })
       );
+    };
+
+    getNationData(nameInput);
+    setNameInput("");
+  
+    const getAgeData = async (name) => {
+      const response = await fetch("https://api.agify.io/?name=" + name);
+      if (!response.ok) {
+        ageActions.clear();
+        return;
+      }
+      const responseData = await response.json();
+  
       dispatch(
         ageActions.setAge({
           name: name,
           country: responseData.country,
-
+  
         })
       );
     };
 
-    getData(nameInput);
+    getAgeData(nameInput);
     setNameInput("");
+  
+
   };
+
+
 
   let handleChangeInput = (event) => { 
     setNameInput(event.target.value);
