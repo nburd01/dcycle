@@ -50,6 +50,13 @@ export const Name = () => {
             "%)",
         })
       );
+      dispatch(
+        nationalityActions.setNationality({
+          name: name,
+          country: responseData.country,
+
+        })
+      );
     };
 
     getData(nameInput);

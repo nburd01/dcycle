@@ -3,21 +3,21 @@ import classes from "./GenderItem.module.css";
 import Trash from "../icons/Trash";
 
 
-//import { genderlistActions } from "../../store/genderlist-slice";
-//import { useDispatch } from "react-redux";
+import { genderlistActions } from "../../store/genderlist-slice";
+import { useDispatch } from "react-redux";
 
 
 const GenderItem = React.memo((props) => {
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const buttonDeleteHandler = (event) => {
-  //   dispatch(
-  //     genderlistActions.removeItem({
-  //       id: props.id
-  //     })
-  //   );
-  // };
+  const buttonDeleteHandler = (event) => {
+    dispatch(
+      genderlistActions.removeItem({
+        id: props.id
+      })
+    );
+  };
 
   return (
     <li className={classes.item} key={props.id}>
