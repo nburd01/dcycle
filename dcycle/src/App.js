@@ -1,14 +1,15 @@
-import { Agify } from "./components/Agify/Agify";
-import { Gender } from "./components/Gender/Gender";
-import GenderList from "./components/GenderList/GenderList";
-import { Name } from "./components/Name/Name";
-import { Nationalize } from "./components/Nationalize/Nationalize";
+// import { Agify } from "./components/Agify/Agify";
+import CovidData from "./components/Covid/CovidData";
+// import { Gender } from "./components/Gender/Gender";
+// import GenderList from "./components/GenderList/GenderList";
+// import { Name } from "./components/Name/Name";
+// import { Nationalize } from "./components/Nationalize/Nationalize";
 
 
 function App() {
   return (
     <main>
-      <section>
+      {/* <section>
         <Name />
         <Gender />
         <Nationalize/>
@@ -16,6 +17,9 @@ function App() {
       </section>
       <section>
         <GenderList />
+      </section> */}
+      <section>
+        <CovidData/>
       </section>
     </main>
   );
