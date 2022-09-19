@@ -10,9 +10,9 @@ function App() {
   return (
     <main>
       <section>
-          <div className="topbar">
+
             <Name/>
-          </div>
+         
         <div className="container">
           <div>
             <Gender />

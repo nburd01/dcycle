@@ -1,9 +1,19 @@
-/* .list{
+.list{
     list-style-type: none;
     text-align: center;
+    display: inline-block;
+}
+.list li {
+    flex-direction: row;
+
 }
 
 .article{
-    width: 82%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    background-color: var(--secondary);
 }
-   */
+  
