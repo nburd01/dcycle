@@ -14,15 +14,15 @@ export const Nationalize = () => {
             <li className="list">
                 <p className={classes.item}>Country: </p> <p className={classes.description}>{nationalizeData.country.country_id}</p>
             </li>
-            <ul>
-            {nationalizeData.country.map((country, index) => (
+              <ul>
+                {nationalizeData.country.map((country, index) => (
 
-                <li key={index}>
-                    <p>{country?.country_id}</p>
-                    <p>{(country?.probability * 100).toFixed(2) + "%"}</p>
-                </li>
-            ))}
-        </ul>
+                    <li key={index}>
+                        <p>{country?.country_id}</p>
+                        <p>{(country?.probability * 100).toFixed(2) + "%"}</p>
+                    </li>
+                ))}
+              </ul>
             </ul>
         </>
     )
