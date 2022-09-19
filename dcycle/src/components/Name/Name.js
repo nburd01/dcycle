@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Article } from "../UI/Article";
 import classes from "./Name.module.css";
 import { genderActions } from "../../store/gender-slice";
 import {genderlistActions} from "../../store/genderlist-slice"
@@ -111,7 +110,7 @@ export const Name = () => {
 
 
   return (
-    <Article className={classes.article}>
+    <div className={classes.article}>
       <h2>Welcome</h2>
       <p className={classes.comment}>Insert the name to verify the gender</p>
       <form  onSubmit={formSubmissionHandler}>
@@ -131,7 +130,7 @@ export const Name = () => {
         <input id="namesubmitcomponent" type="submit" value="check" className={classes.submit} />
       </form>
       <h2>{nameInput}</h2>
-    </Article>
+    </div>
   );
 };
 
