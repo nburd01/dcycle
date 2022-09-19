@@ -26,7 +26,7 @@ export const Name = () => {
     }
     
     const getGenderData = async (name) => {
-      const response = await fetch("https://api.genderize.io/?name=" + name);
+      const response = await fetch("http://localhost:3200/api/genderize/" + name);
       if (!response.ok) {
         genderActions.clear();
         return;
@@ -78,7 +78,7 @@ export const Name = () => {
     setNameInput("");
   
     const getAgeData = async (name) => {
-      const response = await fetch("https://api.agify.io/?name=" + name);
+      const response = await fetch("http://localhost:3200/api/agify/" + name);
       if (!response.ok) {
         ageActions.clear();
         return;
