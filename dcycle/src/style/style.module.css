@@ -4,20 +4,22 @@
 
 html{
   font-size: 16px;
-  --primary: #FFFD00;
-  --secondary:#242B2E; 
-  --third:#e8eef2; 
-  --fourth: #ffffff;
-  --fifth: #fee140;
+  --main : #FFFFFF;
+  --headline: #1f1235;
+  --subHeadline: #1b1425;
+  --secondary:#67568c; 
+  --third:#fbdd74; 
+  --error: #dc204c;
+  --button:#ff6e6c; 
+  --button-text:#1f1235; 
+  --illustration:#1f1235; 
+  --highlight:#ff6e6c; 
   }
 
 body{
   line-height: 1,625;
   margin: 0;
   color: inherit ;
-  background:
-      linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
-      /* url(/assets/Index.png) top center / cover no-repeat; */
   overflow-x: hidden;
   
 } 
@@ -42,14 +44,30 @@ section{
 .container{
   margin: 1.875em auto;
   padding: 1.875em 1.25em;
-  max-width: 1150px;
-
+  width: 1150px;
 }
-
-
+.topbar{
+  display: flex;
+  width: 100%;
+  background-color: #1f1235;
+}
 
 .article {
     width: 400px;
+    background-color: var(--main);
+    border: solid 5px var(--headline);
+    box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  li{
+    list-style: none;
   }
   
   .empty{
@@ -66,7 +84,7 @@ section{
   .description {
     font-size: large;
     font-style: italic;
-    color: blue;
+    color: var(--subHeadline);
   }
   
   .list {

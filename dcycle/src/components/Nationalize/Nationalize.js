@@ -19,7 +19,7 @@ export const Nationalize = () => {
 
                 <li key={index}>
                     <p>{country?.country_id}</p>
-                    <p>{country?.probability}</p>
+                    <p>{(country?.probability * 100).toFixed(2) + "%"}</p>
                 </li>
             ))}
         </ul>
