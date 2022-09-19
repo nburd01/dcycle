@@ -42,7 +42,7 @@ function GB() {
     };
     const handleSubmit = (props) => {
         props.preventDefault();
-        fetch(`https://disease.sh/v3/covid-19/countries/usa`)
+        fetch(`https://disease.sh/v3/covid-19/countries/${userInput}`)
         .then((res) => res.json())
         .then((data) => {
             setData(data);
@@ -51,7 +51,6 @@ function GB() {
 
     return (
         <div className="covidData">
-        <h1>COVID-19 CASES PER COUNTRY</h1>
         <div className="covidData__input">
             <form onSubmit={handleSubmit}>
             {/* input county name */}
