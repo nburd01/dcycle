@@ -68,7 +68,7 @@ export const Name = () => {
       dispatch(
         nationalityActions.setNationality({
           name: name,
-          country: responseData.country,  
+          country: responseData.country,
         })
       );
     };

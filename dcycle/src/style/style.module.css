@@ -16,6 +16,10 @@ html{
   --highlight:#ff6e6c; 
   }
 
+  h1{
+    color: var(--headline) ;
+  }
+
 body{
   line-height: 1,625;
   margin: 0;
@@ -36,6 +40,7 @@ code {
 
 section{
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
