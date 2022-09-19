@@ -10,7 +10,6 @@ export const Gender = () => {
     return (
       <>
       <h1>Gender</h1>
-      <h2 id="gendercomponentnameh2">{genderData.name}</h2>
         <ul className={classes.list}>
           <li className="list">
             <p className={classes.item}>Gender:</p> <p className={classes.description}>{genderData.gender}</p>

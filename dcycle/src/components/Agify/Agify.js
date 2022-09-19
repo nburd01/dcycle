@@ -10,7 +10,6 @@ export const Agify = () => {
     return(
         <>
         <h1>Agify</h1>
-        <h2 id="gendercomponentnameh2">{agifyData.name}</h2>
             <ul className={classes.list}>
             <li className="list">
                 <p className={classes.item}>Age:</p> <p className={classes.description}>{agifyData.age}</p>
