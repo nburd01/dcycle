@@ -95,7 +95,7 @@ export default function App() {
     //     console.log(firstName);
     //     setFirstName(firstName)
     // }
-    if (loading) return <p>Data are loading...</p>;
+    if (loading) return <p>Data loading...</p>;
     if (error) return <p>Error: {error.status}</p>;
 
     const putGenderize = () => {

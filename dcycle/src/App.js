@@ -11,9 +11,9 @@ function App() {
     <main>
       <section>
         <Name />
-        <Gender />
+        {/* <Gender /> */}
         <Nationalize/>
-        <Agify/>
+        {/* <Agify/> */}
       </section>
       <section>
         <GenderList />

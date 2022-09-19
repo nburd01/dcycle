@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Article } from "../UI/Article";
-import classes from "./Nationalize.module.css";
+import classes from "../../style/style.module.css";
 
 export const Nationalize = () => {
   const nationalizeData = useSelector((state) => state.nationalize.data);
@@ -13,12 +13,17 @@ export const Nationalize = () => {
         <h2 id="gendercomponentnameh2">{nationalizeData.name}</h2>
             <ul className={classes.list}>
             <li className="list">
-                <p className={classes.item}>Gender:</p> <p className={classes.description}>{nationalizeData.gender}</p>
+                <p className={classes.item}>Country: </p> <p className={classes.description}>{nationalizeData.country.country_id}</p>
             </li>
-            <li className="list">
-                <p className={classes.item}>Probability</p>
-                <p className={classes.description}>{nationalizeData.probability}</p>
-            </li>
+            <ul>
+            {nationalizeData.country.map((country, index) => (
+
+                <li key={index}>
+                    <p>{country?.country_id}</p>
+                    <p>{country?.probability}</p>
+                </li>
+            ))}
+        </ul>
             </ul>
         </>
     )
