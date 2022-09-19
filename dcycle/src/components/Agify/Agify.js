@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Article } from "../UI/Article";
-import classes from "./Nationalize.module.css";
+import classes from "../../style/style.module.css";
 
 export const Agify = () => {
   const agifyData = useSelector((state) => state.agify.data);

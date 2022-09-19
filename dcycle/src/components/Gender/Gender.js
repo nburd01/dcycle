@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Article } from "../UI/Article";
-import classes from "./Gender.module.css";
+import classes from "../../style/style.module.css";
 
 export const Gender = () => {
   const genderData = useSelector((state) => state.gender.data);

@@ -58,7 +58,7 @@ export const Name = () => {
     setNameInput("");
 
     const getNationData = async (name) => {
-      const response = await fetch("https://api.nationalize.io/?name=" + name);
+      const response = await fetch("http://localhost:3200/api/nationalize/" + name);
       if (!response.ok) {
         nationalityActions.clear();
         return;
@@ -68,8 +68,7 @@ export const Name = () => {
       dispatch(
         nationalityActions.setNationality({
           name: name,
-          age: responseData.age,
-          count: responseData.count,
+          country: responseData.country,
         })
       );
     };
