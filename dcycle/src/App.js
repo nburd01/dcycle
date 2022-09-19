@@ -10,17 +10,19 @@ function App() {
   return (
     <main>
       <section>
+          <div className="topbar">
+            <Name/>
+          </div>
         <div className="container">
-        <Name />
-        </div>
-        <div className="container">
-        <Gender />
-        </div>
-        <div className="container">
-        <Nationalize/>
-        </div>
-        <div className="container">
-        <Agify/>
+          <div>
+            <Gender />
+          </div>
+          <div>
+            <Nationalize/>
+          </div>
+          <div>
+            <Agify/>
+          </div>
         </div>
       </section>
       <section>

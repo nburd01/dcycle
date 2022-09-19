@@ -68,7 +68,7 @@ export const Name = () => {
       dispatch(
         nationalityActions.setNationality({
           name: name,
-          country: responseData.country,
+          country: responseData.country,  
         })
       );
     };
@@ -112,11 +112,11 @@ export const Name = () => {
 
   return (
     <Article className={classes.article}>
-      <h2>NAME</h2>
+      <h2>Welcome</h2>
       <p className={classes.comment}>Insert the name to verify the gender</p>
       <form  onSubmit={formSubmissionHandler}>
         <label>
-          Name:
+          <h1 className="">Name:</h1>
           <input
             type="text"
             id="gname"
