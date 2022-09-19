@@ -9,9 +9,11 @@ import "./style/style.module.css"
 function App() {
   return (
     <main>
-      <section>
+      <section className="sectionOne">
 
             <Name/>
+      </section>
+      <section>
          
         <div className="container">
           <div>
