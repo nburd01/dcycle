@@ -10,7 +10,6 @@ export const Nationalize = () => {
     return(
         <>
         <h1>Nationalize</h1>
-        <h2 id="gendercomponentnameh2">{nationalizeData.name}</h2>
             <ul className={classes.list}>
             <li className="list">
                 <p className={classes.item}>Country: </p> <p className={classes.description}>{nationalizeData.country.country_id}</p>

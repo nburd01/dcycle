@@ -130,6 +130,7 @@ export const Name = () => {
         <br />
         <input id="namesubmitcomponent" type="submit" value="check" className={classes.submit} />
       </form>
+      <h2>{nameInput}</h2>
     </Article>
   );
 };

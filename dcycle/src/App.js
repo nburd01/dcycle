@@ -4,16 +4,24 @@ import { Gender } from "./components/Gender/Gender";
 import GenderList from "./components/GenderList/GenderList";
 import { Name } from "./components/Name/Name";
 import { Nationalize } from "./components/Nationalize/Nationalize";
-
+import "./style/style.module.css"
 
 function App() {
   return (
     <main>
       <section>
+        <div className="container">
         <Name />
-        {/* <Gender /> */}
+        </div>
+        <div className="container">
+        <Gender />
+        </div>
+        <div className="container">
         <Nationalize/>
-        {/* <Agify/> */}
+        </div>
+        <div className="container">
+        <Agify/>
+        </div>
       </section>
       <section>
         <GenderList />

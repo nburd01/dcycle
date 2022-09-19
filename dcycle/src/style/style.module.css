@@ -1,5 +1,55 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+  --primary: #FFFD00;
+  --secondary:#242B2E; 
+  --third:#e8eef2; 
+  --fourth: #ffffff;
+  --fifth: #fee140;
+  }
+
+body{
+  line-height: 1,625;
+  margin: 0;
+  color: inherit ;
+  background:
+      linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+      /* url(/assets/Index.png) top center / cover no-repeat; */
+  overflow-x: hidden;
+  
+} 
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+code {
+  font-family: 'Open Sans', sans-serif;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container{
+  margin: 1.875em auto;
+  padding: 1.875em 1.25em;
+  max-width: 1150px;
+
+}
+
+
+
 .article {
-    width: 40%;
+    width: 400px;
   }
   
   .empty{
